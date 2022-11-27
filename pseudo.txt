@@ -1,0 +1,58 @@
+# download all html pages
+fpath = os.join(os.getcwd(), 'pages')
+for letter in ['al', 'bet', ...]:
+    all_html = [start html: <html>, head, body, name]
+    page_num = 0
+    url = 'http://www.ericlevy.com/revel/bdb/bdb/1/' + letter
+    while true:
+        try:
+            if page_num < 10:
+                curr_page = get url + '0' + str(page_num) + '.html'
+            else:
+                curr_page = get url + str(page_num) + '.html'
+        except [page does not exist]:
+            break
+        clip off prev/first/next buttons in <center>
+        all_html += curr_page
+        page_num += 1
+    with open(os.join(fpath, letter + '.html'), 'w') as f:
+        f.write(all_html)
+
+# scrape data from html
+# triggers for new dictionary listing:
+    # hebrew at beginning of p, text style 0 or 10
+    # subheadings: qal/niphal/etc. (style 18), word senses (enumerated with style 20), subsenses (style 12)
+dct = {}
+curr_head = ''
+curr_subhead = None
+cur_subsubhead = None
+for paragraph:
+    for span:
+        textstyle = int(span.id.split('textStyle')[-1])
+        text = span.text
+        if trigger(textstyle, text):
+            curr_head = text
+            cur_subhead = None
+            dct[text] = []
+        elif subtrigger(textstyle, text):
+            curr_subhead = text
+            dct[curr_head][curr_subhead] = []
+        elif subsubtrigger(textstyle, text):
+            cur_subsubhead = text
+            cur_subsubhead_index = len(dct[curr_head][curr_subhead])
+            dct[curr_head][curr_subhead].append((cur_subsubhead))
+        else:  # content; goes in dict
+            tup = (textstyle, text)
+            if curr_subhead is not None:
+                if curr_subsubhead is not None:
+                    dct[curr_head][curr_subhead][curr_subsubhead].append(tup)
+                else:
+                    [curr_head][curr_subhead].append(tup)
+
+
+
+def trigger(textstyle, text):
+    if text == 10 or text == 0:
+        return True
+
+def subtrigger(textstyle, text):

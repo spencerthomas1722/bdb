@@ -1,0 +1,33 @@
+text style 0: root headings
+text style 1: "in [book]", "p. 3 b supr.", "of foll."
+text style 2: meaning
+text style 3: bullet points, what other lexicons it appears in (S, TWOT, GK); grammatical notes like "q.v.", perfect, "followed by"
+text style 4: citations in other lexicons (e.g. Strong concordance number); subheadings
+text style 5: parentheses
+text style 10: smaller headings
+text style 11: "n.pr.m" type labels
+text style 12: enumerating word sub-meanings (a.), cf.
+text style 13: related verbs (?), related terms, attested examples
+text style 14: citations in [book], "Nu 10:11" type citations
+text style 18: Qal, Niphal, etc. labels
+text style 20: enumerating word senses (1.)
+text style 22: "Ωλα"
+sup: square root symbol
+
+p with first span = style 0: new heading
+p with first span [bullet point]• new header (style 0) or new subheading (style 4)
+
+å = ??
+ad loc.
+Ö
+S = Syriac version or Strong concordance (text style 3)
+c. = circa or cum
+"p. 3 b supr"
+dag.
+pers. = person or personae
+Comm. = Commentary, Commentaries, Commentators
+Gramm = ?
+|| = parallel verse
+
+<span id="textStyle14"> Js 7:</span>
+<span id="textStyle1">7; also </span> <- these lines appeared together. why.
